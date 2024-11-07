@@ -16,6 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+InventorySystem="*res://Scripts/InventorySystem/InventorySystem.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
