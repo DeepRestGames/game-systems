@@ -1,0 +1,263 @@
+[gd_scene load_steps=6 format=3 uid="uid://doekc1fh2fvsm"]
+
+[ext_resource type="Script" path="res://Scripts/Screens/MainMenu.gd" id="1_l4b7b"]
+[ext_resource type="Texture2D" uid="uid://dx14fbui28s3j" path="res://Art/Logos/240423_DRG_Full_Logo_white.png" id="4_3smou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wl68"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar8qn"]
+bg_color = Color(0.92549, 0.690196, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_754aw"]
+bg_color = Color(0.290196, 0, 0.396078, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_l4b7b")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuItems" type="VBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ContinueButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="CONTINUE" type="Button" parent="HUD/MenuItems/ContinueButtonContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "CONTINUE"
+
+[node name="NewGameButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="NEWGAME" type="Button" parent="HUD/MenuItems/NewGameButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "NEW GAME"
+
+[node name="MUSICSliderContainer" type="VBoxContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -5
+alignment = 1
+
+[node name="MUSIC_Label" type="Label" parent="HUD/MenuItems/MUSICSliderContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+text = "MUSIC"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HUD/MenuItems/MUSICSliderContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ar8qn")
+min_value = -30.0
+max_value = 0.0
+
+[node name="CREDITSButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="CREDITS" type="Button" parent="HUD/MenuItems/CREDITSButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "CREDITS"
+
+[node name="QUITButtonContainer" type="AspectRatioContainer" parent="HUD/MenuItems"]
+layout_mode = 2
+alignment_vertical = 2
+
+[node name="QUIT" type="Button" parent="HUD/MenuItems/QUITButtonContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6wl68")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6wl68")
+text = "QUIT"
+
+[node name="DRGLogo" type="TextureRect" parent="HUD"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00434028
+anchor_top = 0.839506
+anchor_right = 0.0911458
+anchor_bottom = 0.993827
+grow_vertical = 0
+texture = ExtResource("4_3smou")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="VersionLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.954861
+anchor_top = 0.95679
+anchor_right = 0.99566
+anchor_bottom = 0.992284
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "V1.0.3"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsPanel" type="Panel" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238715
+anchor_top = 0.095679
+anchor_right = 0.761285
+anchor_bottom = 0.904321
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_754aw")
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsPanelMask" type="Button" parent="HUD/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.486711
+anchor_top = -0.150763
+anchor_right = 1.48671
+anchor_bottom = 1.15076
+offset_right = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HUD/CreditsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.929412, 0.690196, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+bbcode_enabled = true
+text = "[center]
+
+[font_size={40}]Deep Rest Games is:[/font_size]
+
+[font_size={28}]DughiBoogie[/font_size]
+[font_size={24}]Programming & Music[/font_size]
+
+[font_size={28}]enirfo[/font_size]
+[font_size={24}]Art & Graphics[/font_size]
+
+[font_size={28}]DughiBoogie & Enirfo[/font_size]
+[font_size={24}]Everything else[/font_size]
+
+
+[font_size={24}][url=https://deeprestgames.itch.io/pizza-time]Leave us a feedback on the game here[/url][/font_size]
+[font_size={20}]or[/font_size]
+[font_size={24}][url=https://discord.gg/J7BjxXnQ]Come say hi on our discord server[/url][/font_size]
+
+[/center]"
+scroll_active = false
+
+[connection signal="pressed" from="HUD/MenuItems/ContinueButtonContainer/CONTINUE" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/NewGameButtonContainer/NEWGAME" to="." method="_on_new_game_button_pressed"]
+[connection signal="value_changed" from="HUD/MenuItems/MUSICSliderContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="pressed" from="HUD/MenuItems/CREDITSButtonContainer/CREDITS" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HUD/MenuItems/QUITButtonContainer/QUIT" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HUD/CreditsPanel/CreditsPanelMask" to="." method="_on_credits_panel_mask_pressed"]
+[connection signal="meta_clicked" from="HUD/CreditsPanel/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
